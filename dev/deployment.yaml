@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: portfolio
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: myapp
-  replicas: 2
+      run: portfolio
   template:
     metadata:
       labels:
-        app: myapp
+        run: portfolio
     spec:
       containers:
-      - name: myapp
+      - name: portfolio
         image: barathus/portfolio:V1
         ports:
-        - containerPort: 3000
+          - containerPort: 3000
