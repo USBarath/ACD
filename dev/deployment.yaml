@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: portfolio
-        image: nginx
+        image: barathus/portfolio:V1
         ports:
           - containerPort: 3000
