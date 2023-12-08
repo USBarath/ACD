@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: portfolio
+  name: netflix-deployment
+  labels:
+    app: netflix
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      run: portfolio
+      app: netflix
   template:
     metadata:
       labels:
-        run: portfolio
+        app: netflix
     spec:
       containers:
-      - name: portfolio
-        image: nginx
+      - name: netflix
+        image: barathus/netflix:latest
         ports:
-          - containerPort: 3000
+        - containerPort: 80
