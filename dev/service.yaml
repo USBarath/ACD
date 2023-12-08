@@ -1,15 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: portfolio
-  labels:
-    run: portfolio
+  name: netflix-service
 spec:
+  selector:
+    app: netflix
   type: NodePort
   ports:
   - port: 8080
-    targetPort: 3000
+    targetPort: 80
     protocol: TCP
     name: http
-  selector:
-    run: portfolio
